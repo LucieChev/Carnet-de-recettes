@@ -1,0 +1,39 @@
+.page {
+  background-image: url("../assets/pexels-karolina-grabowska-4033005.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.title {
+  position: fixed;
+  text-align: center;
+  width: 50%;
+  bottom: 25%;
+  left: 40%;
+  background-color: transparent;
+  transform: rotate(13deg);
+  color: black;
+}
+.title h1 {
+  font-size: x-large;
+  padding: 1rem;
+}
+.title h2 {
+  margin-top: 4rem;
+  font-size: large;
+  color: black;
+}
+.page a {
+  text-decoration: none;
+  color: black;
+}
+.links {
+  position: fixed;
+  bottom: 2%;
+}

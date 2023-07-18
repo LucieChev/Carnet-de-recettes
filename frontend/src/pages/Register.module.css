@@ -1,0 +1,36 @@
+.page {
+  background-image: url("../assets/pexels-geraud-pfeiffer-6605193.jpg");
+  background-size: cover;
+  background-position: right;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(255, 228, 196, 0.8);
+  border-radius: 20px;
+  margin-top: 2rem;
+}
+.form h2 {
+  margin: 2rem 0 3rem;
+}
+.form input,
+button {
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+.form button {
+  background-color: #f9f997;
+  padding: 0.7rem 2rem;
+}

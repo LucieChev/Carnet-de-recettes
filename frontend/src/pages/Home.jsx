@@ -1,36 +1,25 @@
-import Counter from "../components/Counter";
-import logo from "../assets/logo.svg";
+import { Link } from "react-router-dom";
+import { BsFillArrowRightSquareFill } from "react-icons/bs";
+import styles from "./Home.module.css";
 
 export default function Home() {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+    <div className={styles.page}>
+      <div className={styles.title}>
+        <h1>Créez votre carnet de recettes</h1>
+        <Link to="/création">
+          <h2>Commencez</h2>
+          <BsFillArrowRightSquareFill />
+        </Link>
+      </div>
+      <div className={styles.links}>
+        <Link to="/connexion">
+          <h3>Se connecter</h3>
+        </Link>
+        <Link to="/inscription">
+          <h3>S'inscrire</h3>
+        </Link>
+      </div>
+    </div>
   );
 }
