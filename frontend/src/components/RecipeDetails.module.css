@@ -1,0 +1,26 @@
+.page {
+  background-image: url("../assets/pexels-karolina-grabowska-4033005.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.recipe {
+  position: fixed;
+  text-align: center;
+  width: 60%;
+  bottom: 25%;
+  left: 40%;
+  background-color: transparent;
+  transform: rotate(13deg);
+  color: black;
+}
+.recipe h2 {
+  font-size: xx-large;
+  margin: 1rem;
+}

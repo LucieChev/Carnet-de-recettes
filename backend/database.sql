@@ -20,8 +20,8 @@ CREATE TABLE recipe (
   INSERT INTO user
   (name,  mail_address, hashed_password) 
   VALUES
-  ('Mamie Gateau',  'mamie.gateau@example.fr', 'hashed password'),
-  ('Papy Cuistot', 'papy.cuistot@example.fr', 'hashed password');
+  ('Mamie Gateau',  'mamie.gateau@example.fr', '$argon2id$v=19$m=65536,t=5,p=1$wvR1EJg9klegFdYpo4xKCQ$3KXb/ZKix3t/lz+aMuMvDLMsyy6algAeSao+JuitPwE'),
+  ('Papy Cuistot', 'papy.cuistot@example.fr', '$argon2id$v=19$m=65536,t=5,p=1$SKcvJrh/PENQgoAmUBQyHQ$hnU7IwXjI2ftJ3gUkdPhrWD0c873POb7HbdV4LFfcGw');
 
   INSERT INTO recipe
   (title, description, user_id) 
