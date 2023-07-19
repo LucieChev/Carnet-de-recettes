@@ -60,5 +60,4 @@ const handler = {
   },
 };
 
-
 module.exports = new Proxy(models, handler);
