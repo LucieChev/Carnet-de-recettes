@@ -1,0 +1,107 @@
+/* Nav menu */
+.nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  background-color: var(--navbar-color);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.1s ease-out;
+  z-index: 2;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 2rem;
+}
+.activeNavContent,
+.navContent {
+  color: var(--main-color);
+  font-size: large;
+  list-style-type: none;
+  text-decoration: none;
+  padding: 0.8rem;
+  display: flex;
+}
+
+.activeNavContent {
+  display: none;
+}
+/* Menu Icon */
+.hamb {
+  position: fixed;
+  top: 5%;
+  right: 15%;
+  z-index: 15;
+}
+
+/* Style label tag */
+
+.hambLine {
+  background: var(--main-color);
+  display: block;
+  height: 2px;
+  position: relative;
+  z-index: 3;
+  left: 80%;
+  width: 24px;
+}
+
+/* Style span tag */
+
+.hambLine::before,
+.hambLine::after {
+  background: var(--main-color);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.1s ease-out;
+  width: 100%;
+}
+.hambLine::before {
+  top: 5px;
+}
+.hambLine::after {
+  top: -5px;
+}
+
+.sideMenu {
+  display: none;
+}
+
+/* Toggle menu icon */
+.sideMenu:checked ~ nav {
+  max-height: 100%;
+}
+.sideMenu:checked ~ .hamb .hambLine {
+  background: transparent;
+}
+.sideMenu:checked ~ .hamb .hambLine:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+.sideMenu:checked ~ .hamb .hambLine:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/*NavBar Desktop*/
+@media screen and (min-width: 1024px) {
+  .nav {
+    max-height: none;
+    height: 8vh;
+    width: 100dvw;
+    display: flex;
+    align-items: center;
+  }
+  .hamb {
+    display: none;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 0 1rem;
+  }
+}

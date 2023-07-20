@@ -37,3 +37,25 @@ button {
   padding: 0.7rem 2rem;
   margin-top: 2rem;
 }
+.buttons {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.validationMessage {
+  width: 80%;
+}
+@media screen and (min-width: 1024px) {
+  .form {
+    margin-top: 2rem;
+  }
+  .form h2 {
+    margin: 2rem 0 1rem;
+  }
+  .form input,
+  button {
+    padding: 1rem 2rem;
+  }
+}

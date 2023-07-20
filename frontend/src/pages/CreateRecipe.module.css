@@ -1,40 +1,74 @@
 .page {
-    background-image: url("../assets/pexels-karolina-grabowska-4033005.jpg");
-    background-size: cover;
-    background-position: center;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  background-image: url("../assets/pexels-karolina-grabowska-4033637.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.title {
+  width: 70%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 2rem;
+}
+
+.form input,
+button {
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px var(--second-color);
+  text-align: center;
+
+  cursor: pointer;
+}
+.form button {
+  background-color: var(--yellow-color);
+  padding: 0.7rem 2rem;
+  border-radius: 15px;
+}
+
+.form input {
+  background-color: var(--second-bg-color);
+  border-radius: 20px;
+  height: 80px;
+  width: 250px;
+}
+.buttons {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.validationMessage {
+  width: 80%;
+}
+@media screen and (min-width: 1024px) {
+  .form input {
+    height: 100px;
+    width: 350px;
   }
-  .title {
-    position: fixed;
-    text-align: center;
-    width: 50%;
-    bottom: 25%;
-    left: 40%;
-    background-color: transparent;
-    transform: rotate(13deg);
-    color: black;
-  }
-  .title h1 {
-    font-size: x-large;
-    padding: 1rem;
-  }
-  .title h2 {
-    margin-top: 4rem;
+  ::placeholder {
     font-size: large;
-    color: black;
   }
-  .page a {
-    text-decoration: none;
-    color: black;
+  .form button {
+    margin: 2rem;
+    padding: 1rem 2.5rem;
   }
-  .links {
-    position: fixed;
-    bottom: 2%;
+  .validationMessage {
+    width: 90%;
+    margin-top: 2rem;
   }
-  
+}

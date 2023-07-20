@@ -96,10 +96,11 @@ export default function Register() {
             onChange={handleChange}
             required
           />
-          <div className={styles.validationMessage}>
+          <div className={styles.buttons}>
             {validationMessage ===
             "Veuillez utiliser une autre adresse mail" ? (
               <Alert
+                className={styles.validationMessage}
                 severity={
                   validationMessage ===
                   "Veuillez utiliser une autre adresse mail"
@@ -117,6 +118,7 @@ export default function Register() {
             {validationMessage ===
             "Compte créé. Vous pouvez désormais vous connecter." ? (
               <Alert
+                className={styles.validationMessage}
                 severity={
                   validationMessage ===
                   "Compte créé. Vous pouvez désormais vous connecter."
@@ -130,9 +132,7 @@ export default function Register() {
             {validationMessage ===
             "Compte créé. Vous pouvez désormais vous connecter." ? (
               <Link to="/connexion">
-                <button type="button" className={styles.buttonNext}>
-                  Se connecter
-                </button>
+                <button type="button">Se connecter</button>
               </Link>
             ) : null}
           </div>

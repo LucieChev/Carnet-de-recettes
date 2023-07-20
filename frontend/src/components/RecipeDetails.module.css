@@ -13,14 +13,48 @@
 .recipe {
   position: fixed;
   text-align: center;
-  width: 60%;
-  bottom: 25%;
-  left: 40%;
+  width: 70%;
+  top: 42%;
+  left: 32%;
   background-color: transparent;
   transform: rotate(13deg);
   color: black;
 }
 .recipe h2 {
   font-size: xx-large;
-  margin: 1rem;
+  margin: 2rem;
+}
+.buttons {
+  position: fixed;
+  bottom: 0;
+}
+.buttons img {
+  height: 25px;
+}
+.buttonDelete,
+.buttonEdit {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .buttons img {
+    height: 30px;
+  }
+  .recipe {
+    position: fixed;
+    text-align: center;
+    width: 60%;
+    left: 40%;
+  }
+  .recipe h2 {
+    font-size: xxx-large;
+    margin: 2rem;
+  }
+  .recipe h3 {
+    font-size: x-large;
+    margin: 3rem;
+  }
 }

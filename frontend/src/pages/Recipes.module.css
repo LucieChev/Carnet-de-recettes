@@ -10,12 +10,19 @@
   align-items: center;
   text-align: center;
 }
+.cardRecipe {
+  overflow: scroll;
+}
 .title {
   margin-bottom: 2rem;
-  background-color: var(--second-bg-color);
+  background-color: var(--navbar-color);
   border-radius: 20px;
   padding: 0.5rem 1rem;
   box-shadow: 1px 1px 1px var(--second-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .recipesList {
   display: flex;
@@ -38,8 +45,9 @@
   padding: 2rem;
   height: 80px;
   width: 300px;
-  justify-content: space-between;
   display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 1px 1px 1px var(--second-color);
   cursor: pointer;
 }
@@ -48,6 +56,7 @@
   font-size: small;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .buttons {
   display: flex;
@@ -60,4 +69,21 @@
   width: 20px;
   height: auto;
   cursor: pointer;
+}
+@media screen and (min-width: 1024px) {
+  .title {
+    margin-bottom: 2rem;
+    background-color: transparent;
+    box-shadow: none;
+    font-size: x-large;
+  }
+  .recipe {
+    margin: 0.8rem;
+    height: 100px;
+    width: 400px;
+  }
+
+  .titleRecipe {
+    font-size: medium;
+  }
 }

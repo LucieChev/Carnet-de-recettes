@@ -11,8 +11,8 @@ const {
   verifyPassword,
   hashPassword,
   verifyIfUserRegistered,
-  /* verifyToken,
-  logout, */
+  verifyToken,
+  logout,
 } = require("./services/auth");
 
 router.get("/items", itemControllers.browse);
@@ -25,6 +25,9 @@ router.delete("/items/:id", itemControllers.destroy);
 
 router.get("/recipes", recipeControllers.browse);
 router.get("/recipe/:id", recipeControllers.read);
+router.post("/recipe/register", recipeControllers.add);
+router.put("/recipe/:id", recipeControllers.edit);
+router.delete("/recipe/:id", recipeControllers.destroy);
 
 /* Routes Utilisateurs */
 

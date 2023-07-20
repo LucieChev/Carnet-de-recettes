@@ -31,8 +31,33 @@ button {
   border-radius: 20px;
   border: 1px solid black;
   box-shadow: 1px 1px 1px var(--second-color);
+  text-align: center;
 }
 .form button {
   background-color: var(--yellow-color);
   padding: 0.7rem 2rem;
+  cursor: pointer;
+}
+.buttons {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.validationMessage {
+  width: 80%;
+}
+
+@media screen and (min-width: 1024px) {
+  .form {
+    margin-top: 2rem;
+  }
+  .form h2 {
+    margin: 2rem 0 1rem;
+  }
+  .form input,
+  button {
+    padding: 1rem 2rem;
+  }
 }

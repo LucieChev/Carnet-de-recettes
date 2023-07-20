@@ -7,14 +7,11 @@ body {
   width: 100%;
   --main-color: rgb(6, 7, 8);
   --main-bg-color: rgb(255, 228, 196, 0.8);
-  --second-bg-color: rgb(255, 246, 246);
+  --second-bg-color: rgb(217, 217, 217);
   --second-color: rgb(116, 120, 141);
-  --dark-color: rgb(52, 58, 64);
+  --burger-color: rgb(0, 0, 0, 0.8);
   --yellow-color: rgb(249, 249, 151);
-  --success-color: rgb(28, 187, 140);
-  --info-color: rgb(74, 163, 255);
-  --warning-color: rgb(252, 185, 44);
-  --danger-color: rgb(255, 61, 96);
+  --navbar-color: rgb(217, 217, 217, 0.9);
   --main-font-family: "Pacifico", cursive;
   --second-font-family: "Adamina", serif;
 }

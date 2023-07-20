@@ -14,18 +14,18 @@ const hashingOptions = {
 const getUserByEmail = (req, res, next) => {
   // On récupère l'utilisateur lié au mail du login
   models.user
-    .findByEmailWithPassword(req.body.email)
+    .findByEmailWithPassword(req.body.mail_address)
     .then(([users]) => {
+      console.info(users);
       if (users[0]) {
         [req.user] = users;
         next();
       } else {
-        // Si aucun utilisateur avec cet email n'existe => 401
+        // Si aucun utilisateur avec cet email n'existe
         res.sendStatus(401);
       }
     })
-    .catch((error) => {
-      console.error(error);
+    .catch(() => {
       res.sendStatus(500);
     });
 };
@@ -45,7 +45,7 @@ const hashPassword = (req, res, next) => {
     });
 };
 
-const verifyPassword = (req, res, next) => {
+const verifyPassword = (req, res) => {
   // vérification que le hash du password fourni par l'utilisateur est le même que dans la base de données
   // Si oui => suppression du hashedPassword et du password et on fournit un token
   argon2
@@ -53,21 +53,19 @@ const verifyPassword = (req, res, next) => {
     .then((isPasswordOk) => {
       if (isPasswordOk) {
         // Création du token avec le mdp secret défini dans le .env
-        const token = jwt.sign(
-          { sub: req.user.id, role: req.user.role },
-          JWT_SECRET,
-          {
-            algorithm: "HS512",
-            expiresIn: JWT_TIMING, // le token expire après le délai défini dans le .env
-          }
-        );
+        const token = jwt.sign({ sub: req.user }, JWT_SECRET, {
+          algorithm: "HS512",
+          expiresIn: JWT_TIMING, // le token expire après le délai défini dans le .env
+        });
+        delete req.body.password;
         delete req.user.hashedPassword;
-        delete req.user.password;
+
         res.cookie("access_token", token, {
           httpOnly: true,
           secure: process.env.NODE_ENV === "production",
         });
-        next();
+      } else {
+        res.sendStatus(401);
       }
     })
     .catch((err) => {

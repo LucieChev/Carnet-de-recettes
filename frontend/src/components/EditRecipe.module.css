@@ -1,0 +1,95 @@
+.blur_modal {
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.248);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: relative;
+  z-index: 100;
+  background-color: var(--navbar-color);
+  border-radius: 20px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px var(--second-color);
+}
+.title {
+  font-size: x-large;
+  margin: 2rem 0 0;
+}
+.inputTitle,
+.inputDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.label {
+  margin: 1rem 0 0.7rem;
+  font-size: large;
+}
+.input {
+  background-color: var(--second-bg-color);
+  border-radius: 20px;
+  margin: 0 0 0.7rem;
+  padding: 1rem;
+  height: 80px;
+  width: 200px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px var(--second-color);
+}
+.button {
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px var(--second-color);
+  background-color: var(--yellow-color);
+  padding: 0.7rem 2rem;
+  margin-top: 0.5rem;
+}
+.buttons {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.validationMessage {
+  margin-top: 2rem;
+  width: 80%;
+}
+
+@media screen and (min-width: 1024px) {
+  .modal {
+    padding: 3rem 5rem;
+  }
+  .title {
+    font-size: xx-large;
+    margin: 2rem 0 1rem;
+  }
+  .label {
+    font-size: x-large;
+  }
+  .input {
+    margin: 0 0 1rem;
+    height: 90px;
+    width: 300px;
+  }
+  .validationMessage {
+    margin: 1.5rem 2rem;
+    width: 90%;
+  }
+}
