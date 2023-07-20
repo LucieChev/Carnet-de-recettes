@@ -14,7 +14,7 @@ export default function Register() {
       "string.max":
         "Votre nom doit avoir une longueur maximale de 80 caractères.",
     }),
-    mail_address: Joi.string()
+    email: Joi.string()
       .email({
         minDomainSegments: 2,
         tlds: { allow: ["com", "net", "fr"] },
@@ -32,7 +32,7 @@ export default function Register() {
   const [validationMessage, setValidationMessage] = useState(null);
   const [formInfo, setFormInfo] = useState({
     name: "",
-    mail_address: "",
+    email: "",
     password: "",
   });
 
@@ -82,9 +82,9 @@ export default function Register() {
           />
           <input
             type="email"
-            name="mail_address"
+            name="email"
             placeholder="Adresse mail"
-            value={formInfo.mail_address}
+            value={formInfo.email}
             onChange={handleChange}
             required
           />

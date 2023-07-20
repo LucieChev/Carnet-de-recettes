@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/* import React, { useState } from "react";
 import { Alert } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "./Connexion.module.css";
@@ -7,7 +7,7 @@ import { useUserContext } from "../contexts/UserContext";
 
 export default function Connexion() {
   const [loginInfo, setLoginInfo] = useState({
-    mail_address: "",
+    email: "",
     password: "",
   });
   const [validationMessage, setValidationMessage] = useState(null);
@@ -49,9 +49,9 @@ export default function Connexion() {
         <form className={styles.form} onSubmit={handleSubmit}>
           <input
             type="email"
-            name="mail_address"
+            name="email"
             placeholder="Adresse mail"
-            value={loginInfo.mail_address}
+            value={loginInfo.email}
             onChange={handleChange}
             required
           />
@@ -74,5 +74,93 @@ export default function Connexion() {
         </form>
       </div>
     </div>
+  );
+}
+ */
+
+import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../contexts/UserContext";
+import styles from "./Connexion.module.css";
+import instance from "../services/APIService";
+
+export default function Login() {
+  const { login } = useUserContext();
+  const navigate = useNavigate();
+
+  // Formik Logic
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+
+    /*     validationSchema: loginSchema,
+     */
+    onSubmit: async (values) => {
+      try {
+        const res = await instance.post(`/user/login`, values);
+        if (res) {
+          login(res.data);
+          navigate("/");
+        } else throw new Error();
+      } catch (error) {
+        if (error.request.status === 401) {
+          console.error(error);
+        }
+      }
+    },
+  });
+  return (
+    <main className={styles.page}>
+      <form
+        action="login"
+        onSubmit={formik.handleSubmit}
+        className={styles.formWrapper}
+      >
+        <h3 className={styles.formTitle}>Connectez-vous.</h3>
+        <div className={styles.inputBox}>
+          <label htmlFor="email" className={styles.label}>
+            {formik.touched.email && formik.errors.email
+              ? formik.errors.email
+              : "Email"}
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="adresse@mail.com"
+            required=""
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            className={styles.input}
+          />
+        </div>
+        <div className={styles.inputBox}>
+          <label htmlFor="password" className={styles.label}>
+            {formik.touched.password && formik.errors.password
+              ? formik.errors.password
+              : "Mot de passe"}
+          </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="••••••••"
+            required=""
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            className={styles.input}
+          />
+        </div>
+        <button
+          type="submit"
+          onSubmit={formik.handleSubmit}
+          className={styles.btn}
+        >
+          Connexion
+        </button>
+      </form>
+    </main>
   );
 }
