@@ -11,8 +11,8 @@ const {
   verifyPassword,
   hashPassword,
   verifyIfUserRegistered,
-  verifyToken,
-  logout,
+  /* verifyToken,
+  logout, */
 } = require("./services/auth");
 
 router.get("/items", itemControllers.browse);
