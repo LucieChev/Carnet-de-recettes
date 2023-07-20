@@ -10,24 +10,80 @@
   align-items: center;
   text-align: center;
 }
+.cardRecipe {
+  overflow: scroll;
+}
 .title {
+  margin-bottom: 2rem;
+  background-color: var(--navbar-color);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  box-shadow: 1px 1px 1px var(--second-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: black;
 }
-.title h1 {
-  font-size: x-large;
-  padding: 1rem;
+.recipesList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  margin: 2rem;
 }
-.title h2 {
-  margin-top: 4rem;
-  font-size: large;
-  color: black;
-}
-.page a {
+.cardRecipe a {
   text-decoration: none;
-  color: black;
 }
-.links {
-  position: fixed;
-  bottom: 2%;
+
+.recipe {
+  margin: 0.8rem;
+  border-radius: 20px;
+  border: 1px solid black;
+  background-color: var(--second-bg-color);
+  padding: 2rem;
+  height: 80px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 1px var(--second-color);
+  cursor: pointer;
+}
+
+.titleRecipe {
+  font-size: small;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.button {
+  background-color: transparent;
+  border: none;
+  width: 20px;
+  height: auto;
+  cursor: pointer;
+}
+@media screen and (min-width: 1024px) {
+  .title {
+    margin-bottom: 2rem;
+    background-color: transparent;
+    box-shadow: none;
+    font-size: x-large;
+  }
+  .recipe {
+    margin: 0.8rem;
+    height: 100px;
+    width: 400px;
+  }
+
+  .titleRecipe {
+    font-size: medium;
+  }
 }

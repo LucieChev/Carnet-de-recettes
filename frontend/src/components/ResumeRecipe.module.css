@@ -9,69 +9,31 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: relative;
-  z-index: 1;
 }
 .title {
   position: fixed;
   text-align: center;
   width: 50%;
-  bottom: 17%;
+  bottom: 25%;
   left: 40%;
   background-color: transparent;
   transform: rotate(13deg);
   color: black;
 }
 .title h1 {
-  font-size: xx-large;
+  font-size: x-large;
+  padding: 1rem;
 }
 .title h2 {
-  margin-top: 3rem;
+  margin-top: 4rem;
   font-size: large;
   color: black;
-  cursor: pointer;
 }
 .page a {
   text-decoration: none;
   color: black;
-  cursor: pointer;
 }
 .links {
   position: fixed;
   bottom: 2%;
-}
-
-@media screen and (min-width: 768px) {
-  .title {
-    bottom: 20%;
-  }
-  .title h1 {
-    font-size: xxx-large;
-  }
-  .title h2 {
-    font-size: x-large;
-  }
-
-  .links {
-    bottom: 3%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .title {
-    bottom: 25%;
-  }
-  .title h1 {
-    font-size: xxx-large;
-  }
-  .title h2 {
-    font-size: xx-large;
-    margin-top: 4rem;
-  }
-
-  .links {
-    bottom: 4%;
-  }
-  .links h3 {
-    margin: 0.5rem;
-  }
 }

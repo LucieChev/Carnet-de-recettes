@@ -7,7 +7,7 @@ export default function Home() {
     <div className={styles.page}>
       <div className={styles.title}>
         <h1>Créez votre carnet de recettes</h1>
-        <Link to="/création">
+        <Link to="/creation">
           <h2>Commencez</h2>
           <BsFillArrowRightSquareFill />
         </Link>
