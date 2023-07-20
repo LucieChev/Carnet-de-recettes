@@ -5,14 +5,13 @@ const router = express.Router();
 const itemControllers = require("./controllers/itemControllers");
 const userControllers = require("./controllers/userControllers");
 const recipeControllers = require("./controllers/recipeControllers");
+const { getUserByEmailMiddleware } = require("./controllers/authControllers");
 
 const {
-  getUserByEmail,
   verifyPassword,
   hashPassword,
-  verifyIfUserRegistered,
-  /* verifyToken,
-  logout, */
+  verifyToken,
+  logout,
 } = require("./services/auth");
 
 router.get("/items", itemControllers.browse);
@@ -32,13 +31,8 @@ router.delete("/recipe/:id", recipeControllers.destroy);
 /* Routes Utilisateurs */
 
 router.post("/user", userControllers.add);
-router.post("/user/login", getUserByEmail, verifyPassword);
-
-router.post(
-  "/user/register",
-  verifyIfUserRegistered,
-  hashPassword,
-  userControllers.add
-);
+router.post("/user/login", getUserByEmailMiddleware, verifyPassword);
+router.get("/user/logout", verifyToken, logout);
+router.post("/user/register", hashPassword, userControllers.add);
 
 module.exports = router;

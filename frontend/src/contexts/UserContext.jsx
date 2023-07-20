@@ -1,7 +1,6 @@
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import PropTypes from "prop-types";
-import { createContext, useMemo, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import useLocalStorage from "../hooks/useLocalStorage";
 import instance from "../services/APIService";
 
 const UserContext = createContext();
@@ -9,45 +8,39 @@ const UserContext = createContext();
 export default UserContext;
 
 export function UserContextProvider({ children }) {
-  const [user, setUser] = useLocalStorage("user", null);
-  const [token, setToken] = useLocalStorage("token", "");
-  const [sessionWarning, setSessionWarning] = useState(null);
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("user") || "{}")
+  );
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user.id) navigate("/");
+  }, [user.id]);
 
   const login = (_user) => {
     setUser(_user);
-    setSessionWarning(null);
+    localStorage.setItem("user", JSON.stringify(_user));
   };
 
-  const logout = (sessionExpired) => {
-    instance.get("/logout");
-    setUser(null);
-    setToken(null);
-    navigate("/");
-    if (sessionExpired === true) {
-      // si l'utilisateur est déconnecté suite à un réponse 403 d'une reqûete, un message est affiché sur la page de redirection
-      setSessionWarning("Votre session a expiré. Veuillez vous reconnecter.");
+  const logout = async () => {
+    try {
+      await instance.get("/logout");
+      setUser({});
+      localStorage.removeItem("user");
+    } catch (error) {
+      console.error(error);
     }
   };
 
-  const value = useMemo(
-    () => ({
-      user,
-      setUser,
-      token,
-      setToken,
-      login,
-      logout,
-      sessionWarning,
-      setSessionWarning,
-    }),
-    [user, login, token, sessionWarning]
-  );
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+  const memo = useMemo(() => {
+    return { user, setUser, login, logout };
+  }, [user]);
+
+  return <UserContext.Provider value={memo}>{children}</UserContext.Provider>;
 }
 
 export const useUserContext = () => useContext(UserContext);
 
 UserContextProvider.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.shape().isRequired,
 };
