@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import CreateRecipeTitle from "./CreateRecipeTitle";
 import CreateRecipeDescription from "./CreateRecipeDescription";
+import { useUserContext } from "../contexts/UserContext";
 
 export default function CreateRecipe() {
+  const { user } = useUserContext();
   const [step, setStep] = useState(1);
   const [formInfo, setFormInfo] = useState({
     title: "",
     description: "",
+    user_id: `${user.id}`,
   });
-
   const handleChange = (event) => {
     setFormInfo({ ...formInfo, [event.target.name]: event.target.value });
   };

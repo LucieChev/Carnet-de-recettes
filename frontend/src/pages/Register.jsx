@@ -71,7 +71,7 @@ export default function Register() {
     <div className={styles.page}>
       <div className={styles.form}>
         <h2>S'inscrire</h2>
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
@@ -135,6 +135,10 @@ export default function Register() {
                 <button type="button">Se connecter</button>
               </Link>
             ) : null}
+          </div>
+          <div>
+            <p>Déja inscrit ?</p>
+            <Link to="/connexion"> Cliquez ici</Link>
           </div>
         </form>
       </div>

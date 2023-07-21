@@ -24,5 +24,14 @@ class UserManager extends AbstractManager {
       email,
     ]);
   }
+
+  joinRecipeToUser(id) {
+    return this.database.query(
+      `select r.* from ${this.table} as u
+       join recipe as r on r.user_id = u.id
+   where u.id = ?`,
+      [id]
+    );
+  }
 }
 module.exports = UserManager;

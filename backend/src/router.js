@@ -23,6 +23,7 @@ router.delete("/items/:id", itemControllers.destroy);
 /* Routes Recettes */
 
 router.get("/recipes", recipeControllers.browse);
+router.get("/recipes/:id", userControllers.showRecipeToUser);
 router.get("/recipe/:id", recipeControllers.read);
 router.post("/recipe/register", recipeControllers.add);
 router.put("/recipe/:id", recipeControllers.edit);

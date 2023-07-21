@@ -18,7 +18,8 @@
   text-align: center;
   background-color: var(--main-bg-color);
   border-radius: 20px;
-  margin-top: 2rem;
+  margin: 2rem;
+  padding: 1rem;
   box-shadow: 1px 1px 1px var(--second-color);
 }
 .form h2 {

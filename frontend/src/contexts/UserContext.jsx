@@ -24,7 +24,7 @@ export function UserContextProvider({ children }) {
 
   const logout = async () => {
     try {
-      await instance.get("/logout");
+      await instance.get("/user/logout");
       setUser({});
       localStorage.removeItem("user");
     } catch (error) {

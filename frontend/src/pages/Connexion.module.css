@@ -18,11 +18,19 @@
   text-align: center;
   background-color: rgb(255, 228, 196, 0.8);
   border-radius: 20px;
-  margin-top: 2rem;
+  margin: 2rem;
+  padding: 1rem;
   box-shadow: 1px 1px 1px var(--second-color);
 }
 .form h2 {
   margin: 2rem 0 3rem;
+}
+.inputEmail,
+.inputPassword {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .form input,
 button {
@@ -31,6 +39,7 @@ button {
   border-radius: 20px;
   border: 1px solid black;
   box-shadow: 1px 1px 1px var(--second-color);
+  text-align: center;
 }
 .form button {
   background-color: var(--yellow-color);
