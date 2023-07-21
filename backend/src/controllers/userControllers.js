@@ -77,6 +77,17 @@ const destroy = (req, res) => {
       res.sendStatus(500);
     });
 };
+const showRecipeToUser = (req, res) => {
+  models.user
+    .joinRecipeToUser(req.params.id)
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
 
 module.exports = {
   browse,
@@ -84,4 +95,5 @@ module.exports = {
   edit,
   add,
   destroy,
+  showRecipeToUser,
 };

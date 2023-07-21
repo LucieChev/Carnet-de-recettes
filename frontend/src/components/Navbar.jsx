@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
+import { useUserContext } from "../contexts/UserContext";
 
 export default function NavBar() {
+  const { user, logout } = useUserContext();
+
   const [isActive] = useState(false);
   function closeHamb() {
     isActive(false);
@@ -17,6 +20,9 @@ export default function NavBar() {
       <nav className={styles.nav}>
         <ul>
           <div className={styles.menu}>
+            {user.id ? (
+              <h3 className={styles.name}>Bonjour {user.name}!</h3>
+            ) : null}
             <NavLink
               to="/"
               className={isActive ? styles.activeNavContent : styles.navContent}
@@ -24,7 +30,6 @@ export default function NavBar() {
             >
               Accueil
             </NavLink>
-
             <NavLink
               to="/creation"
               className={isActive ? styles.activeNavContent : styles.navContent}
@@ -32,13 +37,19 @@ export default function NavBar() {
             >
               Ajouter une recette
             </NavLink>
-
             <NavLink
               to="/recettes"
               className={isActive ? styles.activeNavContent : styles.navContent}
               onClick={() => closeHamb()}
             >
               Mes recettes
+            </NavLink>
+            <NavLink
+              to="/"
+              className={isActive ? styles.activeNavContent : styles.navContent}
+              onClick={() => logout()}
+            >
+              Se deconnecter
             </NavLink>
           </div>
         </ul>

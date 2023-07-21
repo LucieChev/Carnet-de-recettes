@@ -41,6 +41,7 @@ export default function CreateRecipeDescription({
     instance
       .post("/recipe/register", formInfo)
       .then((response) => {
+        console.log(response);
         if (response.status === 201) {
           setValidationMessage(
             "La recette a bien été prise en compte, vous pouvez désormais la retrouver ici:"

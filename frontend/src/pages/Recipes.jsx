@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Recipes.module.css";
 import instance from "../services/APIService";
+import { useUserContext } from "../contexts/UserContext";
 
 export default function CreateRecipe() {
+  const { user } = useUserContext();
   const [recipesList, setRecipesList] = useState(null);
 
   useEffect(() => {
     instance
-      .get(`/recipes`)
+      .get(`/recipes/${user.id}`)
       .then((res) => {
         setRecipesList(res.data);
       })
