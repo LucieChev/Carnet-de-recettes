@@ -32,7 +32,6 @@ export default function EditRecipe({ setShowEdit }) {
       });
   }, []);
 
-  // Formik Logic
   const formik = useFormik({
     initialValues: {
       title: recipeInfos.title,

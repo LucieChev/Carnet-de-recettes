@@ -26,9 +26,10 @@ CREATE TABLE recipe (
   INSERT INTO recipe
   (title, description, user_id) 
   VALUES
-  ('Quatre-Quarts',  '4 œufs, le même poids en farine, le même poids en beurre ramolli, le même poids en sucre, 1 sachet de levure chimique, 1 pincée de sel', 1),
-  ('Gateau au yaourt',  '1 pot de yaourt nature, 3 pots de farine, 2 pots de sucre, 1/2 pot huile végétale, 3 œufs, 1 sachet de levure chimique, 1 pincée de sel',1),
-  ('Risotto aux cepes',  '300 g de riz Arborio, 200 g de cèpes, 1 oignon moyen, 2 gousses ail, 750 ml de bouillon de légumes, 150 ml de vin blanc sec, 60 g de parmesan râpé',2);
+  ('Quatre-Quarts',  '4 œufs, le même poids en farine, le même poids en beurre ramolli, le même poids en sucre, 1 sachet de levure chimique, 1 pincée de sel', 3),
+  ('Gateau au yaourt',  '1 pot de yaourt nature, 3 pots de farine, 2 pots de sucre, 1/2 pot huile végétale, 3 œufs, 1 sachet de levure chimique, 1 pincée de sel',3),
+  ('Risotto aux cepes',  '300 g de riz Arborio, 200 g de cèpes, 1 oignon moyen, 2 gousses ail, 750 ml de bouillon de légumes, 150 ml de vin blanc sec, 60 g de parmesan râpé',3
+  );
 
 
 SET FOREIGN_KEY_CHECKS = 1;

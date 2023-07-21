@@ -1,5 +1,5 @@
 .page {
-  background-image: url("../assets/pexels-karolina-grabowska-4033005.jpg");
+  background-image: url("../assets/Background/Recipes.jpg");
   background-size: cover;
   background-position: center;
   width: 100vw;
@@ -10,9 +10,7 @@
   align-items: center;
   text-align: center;
 }
-.cardRecipe {
-  overflow: scroll;
-}
+
 .title {
   margin-bottom: 2rem;
   background-color: var(--navbar-color);

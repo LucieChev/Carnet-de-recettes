@@ -1,5 +1,5 @@
 .page {
-  background-image: url("../assets/pexels-geraud-pfeiffer-6605193.jpg");
+  background-image: url("../assets/Background/Bg-auth.jpg");
   background-size: cover;
   background-position: right;
   width: 100vw;
@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: rgb(255, 228, 196, 0.8);
+  background-color: var(--main-bg-color);
   border-radius: 20px;
   margin: 2rem;
   padding: 1rem;

@@ -45,7 +45,6 @@ export default function CreateRecipe() {
           ;
         </div>
       );
-    // Ajoutez d'autres cas pour chaque étape supplémentaire
     default:
       return null;
   }

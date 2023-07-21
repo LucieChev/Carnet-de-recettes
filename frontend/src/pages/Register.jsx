@@ -6,7 +6,6 @@ import instance from "../services/APIService";
 import styles from "./Register.module.css";
 
 export default function Register() {
-  // Mise en place du schema pour les validateurs Joi
   const schema = Joi.object({
     name: Joi.string().min(3).max(80).messages({
       "string.min":
@@ -36,7 +35,6 @@ export default function Register() {
     password: "",
   });
 
-  // Envoi au back des données recueillies dans le formulaire
   const handleChange = (event) => {
     setFormInfo({ ...formInfo, [event.target.name]: event.target.value });
   };
@@ -72,30 +70,39 @@ export default function Register() {
       <div className={styles.form}>
         <h2>S'inscrire</h2>
         <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Nom d'utilisateur"
-            value={formInfo.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Adresse mail"
-            value={formInfo.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Mot de passe"
-            value={formInfo.password}
-            onChange={handleChange}
-            required
-          />
+          <div className={styles.inputName}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Nom d'utilisateur"
+              value={formInfo.name}
+              onChange={handleChange}
+              required
+            />{" "}
+          </div>
+
+          <div className={styles.inputEmail}>
+            <input
+              type="email"
+              name="email"
+              placeholder="Adresse mail"
+              value={formInfo.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className={styles.inputPassword}>
+            <input
+              type="password"
+              name="password"
+              placeholder="Mot de passe"
+              value={formInfo.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
           <div className={styles.buttons}>
             {validationMessage ===
             "Veuillez utiliser une autre adresse mail" ? (

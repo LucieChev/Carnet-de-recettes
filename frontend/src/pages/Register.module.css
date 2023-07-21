@@ -1,5 +1,5 @@
 .page {
-  background-image: url("../assets/pexels-geraud-pfeiffer-6605193.jpg");
+  background-image: url("../assets/Background/Bg-auth.jpg");
   background-size: cover;
   background-position: right;
   width: 100vw;
@@ -25,6 +25,14 @@
 .form h2 {
   margin: 1rem;
 }
+.inputName,
+.inputEmail,
+.inputPassword {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .form input,
 button {
   padding: 1rem;
@@ -33,11 +41,11 @@ button {
   border: 1px solid black;
   box-shadow: 1px 1px 1px var(--second-color);
   text-align: center;
+  cursor: pointer;
 }
 .form button {
   background-color: var(--yellow-color);
   padding: 0.7rem 2rem;
-  cursor: pointer;
 }
 .buttons {
   text-align: center;
